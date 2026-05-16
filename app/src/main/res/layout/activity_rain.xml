@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/backpalmtree"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tempMedia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="511dp">
+
+        <ImageView
+            android:id="@+id/backView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/pioggia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewRain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="#1F000000"
+                app:cardCornerRadius="40dp"
+                app:strokeColor="@color/lightBorderColor"
+                app:strokeWidth="1dp">
+
+                <eightbitlab.com.blurview.BlurView
+                    android:id="@+id/blurView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:blurOverlayColor="#20FFFFFF">
+
+                    <ImageView
+                        android:id="@+id/iconView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/i02d" />
+                </eightbitlab.com.blurview.BlurView>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/raintTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nevo"
+                android:text="Oggi non piove quindi niente ombrello🥳"
+                android:textAlignment="center"
+                android:textColor="@color/muddyWhite"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="100dp"
+            android:alpha="1"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1F000000"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/lightBorderColor"
+            app:strokeWidth="2dp">
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:blurOverlayColor="#20FFFFFF">
+
+                <Button
+                    android:id="@+id/nextBtn"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="160dp"
+                    android:layout_height="60dp"
+                    android:background="#000000"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:outlineProvider="background"
+                    android:text="NEXT"
+                    android:textColor="@color/buttonColor"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+            </eightbitlab.com.blurview.BlurView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1F000000"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.98"
+            app:strokeColor="@color/lightBorderColor"
+            app:strokeWidth=".5dp">
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurViewSkip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:blurOverlayColor="#20FFFFFF">
+
+                <ImageButton
+                    android:id="@+id/skipBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="65dp"
+                    android:background="#00000000"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="25dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fast_forward"/>
+            </eightbitlab.com.blurview.BlurView>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
